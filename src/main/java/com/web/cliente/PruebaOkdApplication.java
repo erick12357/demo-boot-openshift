@@ -1,8 +1,10 @@
 package com.web.cliente;
 
+
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 @SpringBootApplication
@@ -19,8 +21,8 @@ public class PruebaOkdApplication {
 	}
 	
 	@GetMapping("/saludo/{nombre}")
-	public String saludo() {
-		return "hola ";
+	public String saludo(@PathVariable String nombre) {
+		return "hola "+nombre;
 	}
 
 }
